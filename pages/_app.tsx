@@ -1,13 +1,26 @@
-import { HelloWorld } from "../src/components/HelloWorld";
-import "../public/css/styles.css";
-import React from "react";
+import Head from "next/head";
+import { AppProps } from "next/app";
+import { StyleProvider, ThemePicker } from "vcc-ui";
+// No global styles needed for now
+// import "../public/css/styles.css";
 
-function HomePage() {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <React.StrictMode>
-      <HelloWorld />
-    </React.StrictMode>
+    // Enabled strict mode through next config
+    <StyleProvider>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta
+          name="description"
+          content="Front-end coding test for Volvo Cars"
+        />
+        <title>Volvo Cars</title>
+      </Head>
+      <ThemePicker variant="light">
+        <Component {...pageProps} />
+      </ThemePicker>
+    </StyleProvider>
   );
 }
 
-export default HomePage;
+// Moved HomePage to index.tsx because onDemandEntries client couldn't fetch http://localhost:3000 (404 error)

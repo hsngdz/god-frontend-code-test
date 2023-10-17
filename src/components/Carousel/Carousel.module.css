@@ -1,0 +1,7 @@
+/* Hide the carousel scrollbar */
+.carouselContainer::-webkit-scrollbar {
+  display: none;
+}
+.carouselContainer {
+  scrollbar-width: none; /* Firefox */
+}
