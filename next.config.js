@@ -6,6 +6,6 @@ module.exports = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["127.0.0.1"],
+    domains: ["volvo-fe-test.vercel.app"],
   },
 };

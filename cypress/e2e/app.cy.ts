@@ -39,3 +39,5 @@ describe("Carousel", () => {
     cy.get("[data-testid=carousel]").invoke("scrollLeft").should("equal", 0);
   });
 });
+
+export {}
